@@ -169,6 +169,7 @@ const Award = () => {
                             awards.map((item) => (
                                 <div className="col-12 col-md-4 my-3" key={item._id}>
                                     <div className="card">
+                                        <img className="card-img-top" src={item.img} alt=""/>
                                         <div className="card-body">
                                             <h3>{item.name}</h3>
                                             <h5>{item.point} Poin</h5>
