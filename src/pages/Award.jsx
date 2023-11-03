@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import Cookies from "js-cookie"
 
-const BASE_URL = 'http://localhost:8000'
+const BASE_URL = 'http://localhost:8000/api/v1'
 
 const Award = () => {
     const navigate = useNavigate()
@@ -16,7 +16,7 @@ const Award = () => {
         all: true,
         vouchers: true,
         products: true,
-        giftcard: true,
+        giftcards: true,
     })
     const [poin, setPoin] = useState({
         min: 0,
@@ -31,7 +31,7 @@ const Award = () => {
                 all: true,
                 vouchers: true,
                 products: true,
-                giftcard: true,
+                giftcards: true,
             })
         } else {
             setType((prev) => ({
@@ -151,7 +151,7 @@ const Award = () => {
                                         </label>
                                     </div>
                                     <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" name="type" value="giftcard" checked={type.giftcard} onChange={(e) => typeChange(e)}/>
+                                        <input className="form-check-input" type="checkbox" name="type" value="giftcards" checked={type.giftcards} onChange={(e) => typeChange(e)}/>
                                         <label className="form-check-label">
                                             Giftcards
                                         </label>

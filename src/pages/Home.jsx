@@ -3,7 +3,7 @@ import Cookies from "js-cookie"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const BASE_URL = 'http://localhost:8000'
+const BASE_URL = 'http://localhost:8000/api/v1'
 
 const Home = () => {
     const navigate = useNavigate()
@@ -14,7 +14,7 @@ const Home = () => {
     const loginHandler = async(e) => {
         e.preventDefault()
 
-        await axios.post(`${BASE_URL}/login`, {email})
+        await axios.post(`${BASE_URL}/auth/login`, {email})
             .then((result) => {
                 const accessToken = result.data.accessToken
                 const refreshToken = result.data.refreshToken
