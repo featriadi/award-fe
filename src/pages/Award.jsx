@@ -109,6 +109,9 @@ const Award = () => {
                     <div className="card">
                         <div className="card-body">
                             <h2 className="card-title">Filter</h2>
+                            {
+                                // remove filter
+                            }
                             <form onSubmit={(e) => changeFilter(e)}>
                                 <div className="form-group my-3">
                                     <h5>Poin Needed</h5>
@@ -162,6 +165,7 @@ const Award = () => {
                 <div className="col-12">
                     <div className="row">
                         {
+                            (awards.length !== 0) ? 
                             awards.map((item) => (
                                 <div className="col-12 col-md-4 my-3" key={item._id}>
                                     <div className="card">
@@ -173,6 +177,7 @@ const Award = () => {
                                     </div>
                                 </div>
                             ))
+                            : 'No Awards Found'
                         }
                     </div>
                 </div>
